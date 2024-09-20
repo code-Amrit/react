@@ -41,12 +41,14 @@ function PostForm({post}) {
                 if(file){
                     
                    const fileId = await file.then((res)=> res.$id);                                                                         //file.$id;
-                   console.log(fileId);
+                //    console.log(fileId);
                    
 
                    data.featuredImage = fileId;
+                //    console.log(userData);
                    const dbPost = await appwriteService.createPost({
                     ...data,
+                    
                     userId: userData.$id,
                     
                 })
